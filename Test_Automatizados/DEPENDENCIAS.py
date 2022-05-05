@@ -102,9 +102,88 @@ pnr_mmb = '//*[@id="ANONYMOUS_LOGIN_INPUT_PNR"]' #xpath pnr para recuperar reser
 bnt_cont_mmb = '//*[@id="ANONYMOUS_LOGIN_BOTON"]' #xpath botón continuar
 
 
+# -----TARJETAS REGALO-----
+viaja = '/html/body/nav/div/div[1]/ul/li[1]/a/span' #xpath (para hacer hover en "viaja)
+tarjetas_regalo = '/html/body/nav/div/div[1]/ul/li[1]/div/div/ul/li[4]/ul/li[2]/a/span' #xpath (para acceder al portal de TR)
+compra_TR = '/html/body/main/section/article[1]/div/div/div/div/div/div/div/div/div/div/div[1]/a[1]' #xpath para acceder al flujo de compra TR
+
+tr_primeros = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/fieldset/div/div/div[2]/div/div/label' #xpath selecciona tarjeta para uno mismo
+tr_terceros = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/fieldset/div/div/div[1]/div/div/label' #xpath selecciona tarjeta regalo para terceros
+
+importe_50_bk  = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[1]/div' #xpath selecciona importe 1 (50€)
+importe_100_bk = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[2]/div' #xpath selecciona importe 1 (100€)
+importe_300_bk = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[3]/div' #xpath selecciona importe 1 (300€)
+importe_500_bk = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[4]/div' #xpath selecciona importe 1 (500€)
+
+importe_50 = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[1]/div/div/label/span' #xpath selecciona importe 1 (50€)
+importe_100 = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[2]/div/div/label/span' #xpath selecciona importe 1 (100€)
+importe_300 = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[3]/div/div/label/span' #xpath selecciona importe 1 (300€)
+importe_500 = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-import/fieldset/div[2]/div/div[1]/div/div[4]/div/div/label/span' #xpath selecciona importe 1 (500€)
+
+otro_importe = '//*[@id="customAmount"]'
+
+email_receptor_primeros = '//*[@id="shippingSenderMine"]' #xpath email para el envio del codigo en compra para uno mismo
+
+nombre_receptor_terceros = '//*[@id="receiverName"]' #xpath nombre de receptor TR a terceros
+nombre_remitente = '//*[@id="receiverRenderName"]' #xpath nombre del comprador TR a terceros
+mensaje_personalizado = '//*[@id="receiverMessage"]' #xpath mensaje de la tarjeta regalo
+email_receptor_terceros = '//*[@id="shippingEmailReceiver"]'  #xpath email de receptor TR a terceros
+email_remitente = '//*[@id="shippingEmailRender"]' #xpath email del comprador TR a terceros
+check_envio_remitente = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/ib-gift-cards-shipping-info/fieldset[1]/div[2]' #xpath selecciona el envio de la TR al comprador
+email_recepcion_remitente = '//*[@id="shippingSenderRender"]' #xpath email del comprador TR (de nuevo)
+
+ir_al_pago = '/html/body/main/div/ib-gift-cards-configuration/div/div/ib-gift-cards-configuration-form/div/div/section/div/form/div[2]/div[1]/button' #xpath Boton para continuar al pago
+aceptar_condiciones = '/html/body/div[1]/div/div/footer/button'
+
+confirmacion_compra = '/html/body/main/div/main/div/div[1]/div/div/h1/span[2]'
+
 # -----GESTOR DE BONOS-----
+gestor_bonos = 'https://acceso.pre.iberia.es/oam/server/obrareq.cgi?encquery%3DjyRfgFhEW2IdOS5OKFGs1B0pDazHGYl%2FKSif7ytvy42Y%2F1nL%2F5d9COgQ6ZvdER3VTPM%2FZvCapQz546PMUT1MM0jqqpiGttR1%2B2n%2B1%2B3Oli9byjd1hEzR42ZDczbn7AIWUYdGlws%2B4%2BtC%2BkmzB1PODid5SgXtwVrDHzlMR5iYalt%2FLQ2caZCOMrMcBPXAaR6WGOoUaeX93mS2AJVFxgNoitqkr8l%2B0KGlj26KbhckgU9tXYOh7t91c8cBY9zJVAmO7dENsg56n583v1QnJ2P6dnIin1HHazGh7uT20pZZFDyiNGYTaZIZupkA%2FRGyfWZTmmZzzxri389ECXDG1HVn3k6sFbCquk3ENfEEYDBCUDo%3D%20agentid%3DPortalpre11g_wg%20ver%3D1%20crmethod%3D2'
 user_bonos = '//*[@id="username"]'
 password_bonos = '//*[@id="password"]'
 boton_login_bonos = '/html/body/form/div/div/div/div[2]/input[2]'
 
 pestaña_campaña = '/html/body/header/div/nav/div[2]/div/ul/li[3]/a'
+boton_campaña = '/html/body/div[1]/div[2]/div/a'
+codigo_campaña = '//*[@id="codigoCampanya"]'
+campaña_centro_presupuestario = '//*[@id="centroPresupuestario"]'
+campaña_cuenta_contable = '//*[@id="cuentaContable"]'
+campaña_motivo = '//*[@id="motivo"]'
+campaña_submotivo = '//*[@id="submotivo"]'
+campaña_bp = '/html/body/div[1]/form/div[2]/div[2]/div[2]/div[1]/div/ul/li[1]/a'
+campaña_bf = '/html/body/div[1]/form/div[2]/div[2]/div[2]/div[1]/div/ul/li[2]/a'
+campaña_tr = '/html/body/div[1]/form/div[2]/div[2]/div[2]/div[1]/div/ul/li[3]/a'
+campaña_cantidad_porcentual = '//*[@id="cantidadPorcentual"]'
+campaña_cantidad_fija = '//*[@id="cantidadFija"]'
+campaña_cantidad_marketing = '//*[@id="cantidadFijaMarketing"]'
+campaña_cantidad_fija_tr = '//*[@id="cantidadTarjetaRegalo"]'
+campaña_cantidad_marketing_tr = '//*[@id="cantidadTarjetaRegaloMarketing"]'
+campaña_moneda = '//*[@id="moneda"]'
+campaña_moneda_tr = '//*[@id="monedaTarjetaRegalo"]'
+campaña_numero_usos = '//*[@id="numUsos"]'
+campaña_boton_guardar = '//*[@id="buttonCargar"]'
+campaña_boton_final = '//*[@id="buttonCampanyaForm"]'
+campaña_creacion_confirmacion = '/html/body/div[1]/div[2]'
+
+pestaña_bono = '/html/body/header/div/nav/div[2]/div/ul/li[4]/a'
+bono_codigo_aleatorio = '/html/body/div[1]/form/div[2]/div[1]/div[2]/div/div/div[2]/label[3]'
+bono_numero_bonos = '//*[@id="numeroBono"]'
+bono_campaña = '//*[@id="idCampanya"]'
+bono_boton_final = '/html/body/div[1]/form/div[4]/div/div/div[3]/button[1]'
+bono_creacion_confirmacion = '//*[@id="message-success"]'
+
+pestaña_busqueda = '/html/body/header/div/nav/div[2]/div/ul/li[1]/a'
+buscar_bono ='/html/body/div[1]/form/div[1]/div/div/label[1]'
+buscar_campaña = '/html/body/div[1]/form/div[1]/div/div/label[2]'
+buscar_signos_bono = '//*[@id="desplegableSignosCodigoBono"]'
+buscar_codigo_bono = '//*[@id="campoCodigoBono"]'
+buscar_tipo_codigo_bono = '//*[@id="desplegableCodigoBono"]'
+buscar_boton_buscar = '/html/body/div[1]/form/div[4]/div[2]/div/button'
+buscar_id_bono = '/html/body/div[1]/div[2]/form/div/div/div/table/tbody/tr/td[2]'
+buscar_editar_bono_tr = '/html/body/div[1]/div[2]/form/div/div/div/table/tbody/tr/td[10]/a[2]'
+buscar_editar_bono_bp = '/html/body/div[1]/div[2]/form/div/div/div/table/tbody/tr[1]/td[10]/a[3]'
+
+ventana_editar = '//*[@id="editBonoForm"]'
+ventana_editar_tipo_bono = '/html/body/div[1]/form/div[2]/div[2]/div[2]/div[3]/div/ul/li/a'
+edicion_texto_comentario = '//*[@id="textoComentarioCrear"]'
+edicion_guardar_comentario = '//*[@id="botonCrearComentario"]'

@@ -21,6 +21,120 @@ class Datos_pasajeros():
         A6 = sheet['A6']
         return A6
 
+    def read_tr_cantidad_primeros(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        H2 = sheet['H2']
+        return H2
+
+    def read_tr_email_primeros(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        H3 = sheet['H3']
+        return H3
+
+    def read_tr_cantidad_terceros(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F2 = sheet['F2']
+        return F2
+
+    def read_tr_email_remitente(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F3 = sheet['F3']
+        return F3
+
+    def read_tr_email_receptor(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F4 = sheet['F4']
+        return F4
+
+    def read_tr_nombre_remitente(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F5 = sheet['F5']
+        return F5
+
+    def read_tr_nombre_receptor(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F6 = sheet['F6']
+        return F6
+
+    def read_tr_mensaje(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F7 = sheet['F7']
+        return F7
+
+    def read_tr_impresion_check(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F8 = sheet['F8']
+        return F8
+
+    def read_email_impresion(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F9 = sheet['F9']
+        return F9
+
+    def read_bonos_campaña_tipo(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F13 = sheet['F13']
+        return F13
+
+    def read_bonos_campaña_cantidad_total(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F14 = sheet['F14']
+        return F14
+
+    def read_bonos_campaña_cantidad_porcentual(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F15 = sheet['F15']
+        return F15
+
+    def read_bonos_campaña_cantidad_marketing(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F16 = sheet['F16']
+        return F16
+
+    def read_bonos_campaña_numero_usos(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F17 = sheet['F17']
+        return F17
+
+    def read_bonos_edicion_cantidad_porcentual(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F20 = sheet['F20']
+        return F20
+    def read_bonos_edicion_cantidad_total(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F21 = sheet['F21']
+        return F21
+
+    def read_bonos_edicion_cantidad_marketing(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F22 = sheet['F22']
+        return F22
+
+    def read_bonos_edicion_numero_usos(self):
+        wb = load_workbook(filepath)
+        sheet = wb.active
+        F23 = sheet['F23']
+        return F23
+
+
     def cont_vuelo(driver):
         try:
             WebDriverWait(driver, 15).until(
