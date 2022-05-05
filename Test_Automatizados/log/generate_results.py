@@ -11,18 +11,90 @@ shutil.copy2('results_template.html', 'results.html')
 
 INT_001_BAG_perf_status="test-result-step-result-cell-notperformed"
 INT_001_BAG_perf_result="Not_performed"
+
+INT_001_SEAT_perf_status="test-result-step-result-cell-notperformed"
+INT_001_SEAT_perf_result="Not_performed"
+
+INT_001_SPEC_perf_status="test-result-step-result-cell-notperformed"
+INT_001_SPEC_perf_result="Not_performed"
+
+INT_001_FLEX_perf_status="test-result-step-result-cell-notperformed"
+INT_001_FLEX_perf_result="Not_performed"
+
+INT_001_PRIO_perf_status="test-result-step-result-cell-notperformed"
+INT_001_PRIO_perf_result="Not_performed"
+
+INT_001_INS_perf_status="test-result-step-result-cell-notperformed"
+INT_001_INS_perf_result="Not_performed"
+
 ST_001_perf_status="test-result-step-result-cell-notperformed"
 ST_001_perf_result="Not_performed"
+
 ST_002_perf_status="test-result-step-result-cell-notperformed"
 ST_002_perf_result="Not_performed"
+
 ST_003_perf_status="test-result-step-result-cell-notperformed"
 ST_003_perf_result="Not_performed"
+
+ST_004_perf_status="test-result-step-result-cell-notperformed"
+ST_004_perf_result="Not_performed"
+
+ST_005_perf_status="test-result-step-result-cell-notperformed"
+ST_005_perf_result="Not_performed"
+
+ST_006_perf_status="test-result-step-result-cell-notperformed"
+ST_006_perf_result="Not_performed"
+
+ST_007_perf_status="test-result-step-result-cell-notperformed"
+ST_007_perf_result="Not_performed"
+
+ST_008_perf_status="test-result-step-result-cell-notperformed"
+ST_008_perf_result="Not_performed"
+
+ST_009_perf_status="test-result-step-result-cell-notperformed"
+ST_009_perf_result="Not_performed"
+
+ST_010_perf_status="test-result-step-result-cell-notperformed"
+ST_010_perf_result="Not_performed"
+
 ST_011_perf_status="test-result-step-result-cell-notperformed"
 ST_011_perf_result="Not_performed"
+
 ST_012_perf_status="test-result-step-result-cell-notperformed"
 ST_012_perf_result="Not_performed"
+
 ST_013_perf_status="test-result-step-result-cell-notperformed"
 ST_013_perf_result="Not_performed"
+
+ST_014_perf_status="test-result-step-result-cell-notperformed"
+ST_014_perf_result="Not_performed"
+
+ST_015_perf_status="test-result-step-result-cell-notperformed"
+ST_015_perf_result="Not_performed"
+
+ST_016_perf_status="test-result-step-result-cell-notperformed"
+ST_016_perf_result="Not_performed"
+
+ST_017_perf_status="test-result-step-result-cell-notperformed"
+ST_017_perf_result="Not_performed"
+
+ST_018_perf_status="test-result-step-result-cell-notperformed"
+ST_018_perf_result="Not_performed"
+
+ST_019_perf_status="test-result-step-result-cell-notperformed"
+ST_019_perf_result="Not_performed"
+
+ST_020_perf_status="test-result-step-result-cell-notperformed"
+ST_020_perf_result="Not_performed"
+
+ST_021_perf_status="test-result-step-result-cell-notperformed"
+ST_021_perf_result="Not_performed"
+
+ST_022_perf_status="test-result-step-result-cell-notperformed"
+ST_022_perf_result="Not_performed"
+
+ST_023_perf_status="test-result-step-result-cell-notperformed"
+ST_023_perf_result="Not_performed"
 
 # no log -> not performed
 dircontent = os.listdir('.')
@@ -32,7 +104,7 @@ for f in dircontent:
     ## INT 001 BAG
     #print(f)
     #print("INT_001_log_"+str(d1))
-    if (f=="INT_001_log_"+str(d1)):
+    if (f=="INT_001_log"):
        # ejecucion de INT_001
        print ("Analysing INT_001_log..."+f)
        with open(f, "rt") as log:
@@ -45,6 +117,56 @@ for f in dircontent:
            INT_001_BAG_perf_status="test-result-step-result-cell-failure"
            print("INT_001_BAG KO")
            INT_001_BAG_perf_result="KO"
+           
+       if "ANC_SEAT_OK" in content:
+           INT_001_SEAT_perf_status="test-result-step-result-cell-ok"
+           INT_001_SEAT_perf_result="OK"
+           print("INT_001_SEAT OK")
+       else:
+           INT_001_SEAT_perf_status="test-result-step-result-cell-failure"
+           print("INT_001_SEAT KO")
+           INT_001_SEAT_perf_result="KO"
+           
+       if "ANC_SPEC_OK" in content:
+           INT_001_SPEC_perf_status="test-result-step-result-cell-ok"
+           INT_001_SPEC_perf_result="OK"
+           print("INT_001_SPEC OK")
+       else:
+           INT_001_SPEC_perf_status="test-result-step-result-cell-failure"
+           print("INT_001_SPEC KO")
+           INT_001_SPEC_perf_result="KO"
+
+       if "ANC_FLEX_OK" in content:
+           INT_001_FLEX_perf_status="test-result-step-result-cell-ok"
+           INT_001_FLEX_perf_result="OK"
+           print("INT_001_FLEX OK")
+       else:
+           INT_001_FLEX_perf_status="test-result-step-result-cell-failure"
+           print("INT_001_FLEX KO")
+           INT_001_FLEX_perf_result="KO"
+
+       if "ANC_PRIO_OK" in content:
+           INT_001_PRIO_perf_status="test-result-step-result-cell-ok"
+           INT_001_PRIO_perf_result="OK"
+           print("INT_001_PRIO OK")
+       else:
+           INT_001_PRIO_perf_status="test-result-step-result-cell-failure"
+           print("INT_001_PRIO KO")
+           INT_001_PRIO_perf_result="KO"
+
+       if "ANC_INS_OK" in content:
+           INT_001_INS_perf_status="test-result-step-result-cell-ok"
+           INT_001_INS_perf_result="OK"
+           print("INT_001_INS OK")
+       else:
+           INT_001_INS_perf_status="test-result-step-result-cell-failure"
+           print("INT_001_INS KO")
+           INT_001_INS_perf_result="KO"           
+           
+           
+           
+           
+           
            
     ## Sanity 001
     if (f=="Sanity_001_log"):
@@ -152,6 +274,21 @@ with open("results.html", "rt") as file:
         x = x.replace("test-result-step-result-cell-notperformed_INT_001_BAG",INT_001_BAG_perf_status)
         x = x.replace("INT_001_BAG_Result",INT_001_BAG_perf_result)
         
+        x = x.replace("test-result-step-result-cell-notperformed_INT_001_SEAT",INT_001_SEAT_perf_status)
+        x = x.replace("INT_001_SEAT_Result",INT_001_SEAT_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_INT_001_SPEC",INT_001_SPEC_perf_status)
+        x = x.replace("INT_001_SPEC_Result",INT_001_SPEC_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_INT_001_FLEX",INT_001_FLEX_perf_status)
+        x = x.replace("INT_001_FLEX_Result",INT_001_FLEX_perf_result)
+
+        x = x.replace("test-result-step-result-cell-notperformed_INT_001_PRIO",INT_001_PRIO_perf_status)
+        x = x.replace("INT_001_PRIO_Result",INT_001_PRIO_perf_result)
+
+        x = x.replace("test-result-step-result-cell-notperformed_INT_001_INS",INT_001_INS_perf_status)
+        x = x.replace("INT_001_INS_Result",INT_001_INS_perf_result)
+             
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_001",ST_001_perf_status)
         x = x.replace("Sanity_001_Result",ST_001_perf_result)
         
@@ -160,19 +297,66 @@ with open("results.html", "rt") as file:
         
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_003",ST_003_perf_status)
         x = x.replace("Sanity_003_Result",ST_003_perf_result)
+     
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_004",ST_004_perf_status)
+        x = x.replace("Sanity_004_Result",ST_004_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_005",ST_005_perf_status)
+        x = x.replace("Sanity_005_Result",ST_005_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_006",ST_006_perf_status)
+        x = x.replace("Sanity_006_Result",ST_006_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_007",ST_007_perf_status)
+        x = x.replace("Sanity_007_Result",ST_007_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_008",ST_008_perf_status)
+        x = x.replace("Sanity_008_Result",ST_008_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_009",ST_009_perf_status)
+        x = x.replace("Sanity_009_Result",ST_009_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_010",ST_010_perf_status)
+        x = x.replace("Sanity_010_Result",ST_010_perf_result)
         
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_011",ST_011_perf_status)
         x = x.replace("Sanity_011_Result",ST_011_perf_result)
         
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_012",ST_012_perf_status)
         x = x.replace("Sanity_012_Result",ST_012_perf_result)
-        
-        
+         
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_013",ST_013_perf_status)
         x = x.replace("Sanity_013_Result",ST_013_perf_result)
         
         x = x.replace("test-result-step-result-cell-notperformed_Sanity_014",ST_014_perf_status)
         x = x.replace("Sanity_014_Result",ST_014_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_015",ST_015_perf_status)
+        x = x.replace("Sanity_015_Result",ST_015_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_016",ST_016_perf_status)
+        x = x.replace("Sanity_016_Result",ST_016_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_017",ST_017_perf_status)
+        x = x.replace("Sanity_017_Result",ST_017_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_018",ST_018_perf_status)
+        x = x.replace("Sanity_018_Result",ST_018_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_019",ST_019_perf_status)
+        x = x.replace("Sanity_019_Result",ST_019_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_020",ST_020_perf_status)
+        x = x.replace("Sanity_020_Result",ST_020_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_021",ST_021_perf_status)
+        x = x.replace("Sanity_021_Result",ST_021_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_022",ST_022_perf_status)
+        x = x.replace("Sanity_022_Result",ST_022_perf_result)
+        
+        x = x.replace("test-result-step-result-cell-notperformed_Sanity_023",ST_023_perf_status)
+        x = x.replace("Sanity_023_Result",ST_023_perf_result)
         
         file.write(x)
 
