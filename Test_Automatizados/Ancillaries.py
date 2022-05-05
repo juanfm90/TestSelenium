@@ -342,7 +342,7 @@ class Ancillaries():
         try:
             # solo funciona de esta manera 
             seatav =  driver.find_element(By.XPATH, '//button[@ng-click="ibSeatMapBoxCtrl.openSeatMap()"]')    
-            seatav.click()
+            #seatav.click()
 
             #seatav = WebDriverWait(driver, 60).until(
             #            EC.visibility_of_element_located((By.XPATH, '/html/body/main/div[2]/div[2]/div[3]/equal-height/div[1]/ib-seat-map-box/div/section/div/div[2]/div[2]/div/button')))

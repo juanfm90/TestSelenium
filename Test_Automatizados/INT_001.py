@@ -15,7 +15,7 @@ class INT_001(unittest.TestCase):
         try:
             now = datetime.now()
             dt_string = now.strftime("%Y%m%d")
-            logging.basicConfig(filename='log/'+'INT_001'+'_log_'+dt_string, filemode='w', encoding='utf-8', level=logging.INFO, format='[%(asctime)s] [%(levelname)-8s] %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+            logging.basicConfig(filename='log/'+'INT_001'+'_log', filemode='w', encoding='utf-8', level=logging.INFO, format='[%(asctime)s] [%(levelname)-8s] %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
             logging.info("Test_Name:INT_001 - integrity_PREE")
             logging.info("Test_description: Comprobar estado de ancillaries en PREE")
         except Exception as e:
