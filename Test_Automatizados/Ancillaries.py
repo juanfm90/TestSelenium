@@ -351,11 +351,72 @@ class Ancillaries():
             #print(seatav)
             if seatav: return True
             else: return False
-
         except:
             # capture of any failure
             capture.capture_screen(driver,"screenshots","INT_001_SEAT_NALP_KO")
             return False
+
+
+    def is_specs_available(driver):
+        # DEF: This is a getter method to determine if specs ancillary is abailable or not
+
+        print("Checking if specs is available...")
+        # preventive sleep
+        time.sleep(10)
+        return False
+
+    def is_prio_available(driver):
+        # DEF: This is a getter method to determine if priority ancillary is abailable or not
+       
+        print("Checking if prio is available...")
+        # preventive sleep
+        time.sleep(10)
+        return False
+        
+    def is_flex_available(driver):
+        # DEF: This is a getter method to determine if flex ancillary is abailable or not
+        
+        print("Checking if flex is available...")
+        # preventive sleep
+        time.sleep(10)
+        
+        try:
+            
+            time.sleep(10)
+            WebDriverWait(driver, 50).until(
+            EC.element_to_be_clickable((By.XPATH, add_flex)))
+            flex = driver.find_element(By.XPATH, add_flex)
+            if flex:
+                return True
+            else:
+                return False
+        except:
+            # capture of any failure
+            capture.capture_screen(driver,"screenshots","INT_001_FLEX_KO")
+            return False
+            
+         
+
+    def is_ins_available(driver):
+        # DEF: This is a getter method to determine if insurance ancillary is abailable or not
+ 
+        print("Checking if insurance is available...")
+        # preventive sleep
+        time.sleep(10)
+        
+        try:
+            time.sleep(10)
+            seguro = driver.find_element(By.XPATH, '/html/body/main/div[2]/div[2]/ib-insurance/div/div/form/div/div/div/fieldset/div[1]/div/div[1]/label/span[1]')
+            if seguro:
+                return True
+            else:
+                return False
+        except:
+            # capture of any failure
+            capture.capture_screen(driver,"screenshots","INT_001_PRIO_KO")
+            return False
+
+
 
     def santander(driver):
         WebDriverWait(driver, 100).until(

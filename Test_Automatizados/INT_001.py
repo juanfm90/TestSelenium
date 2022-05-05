@@ -78,12 +78,30 @@ class INT_001(unittest.TestCase):
 
     def checkancillariesstatus(self):
         
+        # Dispo de bag
         if(Ancillaries.is_bag_available(self.driver)): logging.info("ANC_BAG_OK")
         else: logging.info("ANC_BAG_KO")
-        #logging.info(self.driver.page_source)
+        
+        # Dispo de asientos
         if(Ancillaries.is_seat_available(self.driver)): logging.info("ANC_SEAT_OK")
         else: logging.info("ANC_SEAT_KO")
-
+        
+        # Dispo de specs
+        if(Ancillaries.is_specs_available(self.driver)): logging.info("ANC_SPECS_OK")
+        else: logging.info("ANC_SPECS_KO")
+        
+        # Dispo de flex
+        if(Ancillaries.is_flex_available(self.driver)): logging.info("ANC_FLEX_OK")
+        else: logging.info("ANC_FLEX_KO")
+        
+        # Dispo de prio
+        if(Ancillaries.is_prio_available(self.driver)): logging.info("ANC_PRIO_OK")
+        else: logging.info("ANC_PRIO_KO")
+        
+        # Dispo de Ins
+        if(Ancillaries.is_ins_available(self.driver)): logging.info("ANC_INS_OK")
+        else: logging.info("ANC_INS_KO")
+        
     def test_INT_001(self):
         self.param_search() #Función q indica los parámetros de búsqueda de vuelo
         self.select_flight()
